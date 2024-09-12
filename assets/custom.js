@@ -13,6 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Обробка кліків по кнопках опитування
+  document.querySelectorAll(".survey_button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var questionId = this.parentElement.id; // Отримуємо id питання (q1, q2 і т.д.)
+      var answer = this.getAttribute("data-bq"); // Отримуємо значення відповіді
+
+      // Зберігаємо відповідь в локальному сховищі
+      saveAnswer(questionId, answer);
+
+      // Для тестування виводимо відповідь в консоль
+      console.log(`Question: ${questionId}, Answer: ${answer}`);
+    });
+  });
+
   // Перевірка, чи існує контейнер для делегування подій
   const surveyContainer = document.querySelector(".survey_container");
   if (surveyContainer) {
@@ -72,4 +86,5 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  // console.log("Survey container found:", surveyContainer);
 });
