@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     surveyContainer.addEventListener("click", function (e) {
       if (e.target.classList.contains("survey_button")) {
         const questionId = e.target.parentElement.id;
-        const answer = e.target.textContent.trim();
+        const answer = e.textContent.trim();
         saveAnswer(questionId, answer);
       }
     });
