@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     okButton.addEventListener("click", function (event) {
       event.preventDefault();
       showSavedAnswers();
+
+      const iphone = document.querySelector("#iphone");
+      if (iphone) {
+        iphone.style.display = "none";
+      }
     });
   }
 
